@@ -1,3 +1,3 @@
 #Xamarin
 
-This repository contains the duties of the Xamarin workshop.
+This repository contains some of the assignments of the Xamarin workshop.
