@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica5.View.RNCView">
+    <ContentPage.Content>
+
+        <!-- Main content -->
+        <StackLayout Orientation="Vertical" Margin="20">
+
+            <!-- Headers -->
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Insert your RNC:" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding rnc}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Button Text="Validate" BackgroundColor="Black" HorizontalOptions="FillAndExpand" TextColor="White" Command="{Binding buttonClick}"/>
+            </StackLayout>
+
+            <!-- Grid Definition -->
+            <StackLayout Orientation="Vertical">
+                <ActivityIndicator IsRunning="{Binding isBusy}"/>
+                <Grid IsVisible="{Binding hasResult}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Grid Elements -->
+                    <Label Text="Results:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+
+                    <Label Text="RNC" Grid.Row="1" Grid.Column="0" FontAttributes="Bold"/>
+                    <Label Text="{Binding rnc}" Grid.Row="1" Grid.Column="1"  />
+
+                    <Label Text="Name" Grid.Row="2" Grid.Column="0" FontAttributes="Bold"/>
+                    <Label Text="{Binding name}" Grid.Row="2" Grid.Column="1"/>
+
+                    <Label Text="Comercial Name" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" />
+                    <Label Text="{Binding commercialName}" Grid.Row="3" Grid.Column="1" />
+
+                    <Label Text="Category" Grid.Row="4" Grid.Column="0" FontAttributes="Bold"/>
+                    <Label Text="{Binding category}" Grid.Row="4" Grid.Column="1" />
+
+                    <Label Text="Payment Regimen" Grid.Row="5" Grid.Column="0" FontAttributes="Bold"/>
+                    <Label Text="{Binding paymentRegimen}" Grid.Row="5" Grid.Column="1"/>
+
+                    <Label Text="Payment Status" Grid.Row="6" Grid.Column="0" FontAttributes="Bold"/>
+                    <Label Text="{Binding paymentStatus}" Grid.Row="6" Grid.Column="1"/>
+                </Grid>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
